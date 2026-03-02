@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zakázkový vývoj aplikací | Od nápadu po produkci</title>
+    <meta
+      name="description"
+      content="Zakázkový vývoj multiplatformních, nativních a webových aplikací se společným backendem. Rychlý start, čistý kód, dlouhodobá podpora."
+    />
+    <script>
+      (() => {
+        try {
+          const stored = localStorage.getItem("theme-preference");
+          const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const resolved =
+            stored === "light" || stored === "dark" ? stored : systemDark ? "dark" : "light";
+
+          if (resolved === "dark") {
+            document.documentElement.classList.add("theme-dark");
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-left"></div>
+    <div class="bg-orb orb-right"></div>
+
+    <header class="site-header">
+      <div class="container nav">
+        <p class="brand">Pavel Pejsek</p>
+        <div class="nav-actions">
+          <div
+            id="theme-toggle"
+            class="theme-toggle"
+            role="radiogroup"
+            aria-label="Přepínač vzhledu"
+          >
+            <span class="theme-thumb" aria-hidden="true"></span>
+            <button
+              class="theme-option"
+              type="button"
+              data-theme-choice="system"
+              role="radio"
+              aria-checked="true"
+              aria-label="Systémový vzhled"
+            >
+              ◐
+            </button>
+            <button
+              class="theme-option"
+              type="button"
+              data-theme-choice="dark"
+              role="radio"
+              aria-checked="false"
+              aria-label="Tmavý vzhled"
+            >
+              ☾
+            </button>
+            <button
+              class="theme-option"
+              type="button"
+              data-theme-choice="light"
+              role="radio"
+              aria-checked="false"
+              aria-label="Světlý vzhled"
+            >
+              ☼
+            </button>
+          </div>
+          <a class="btn btn-small" href="#kontakt">Nezávazná konzultace</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Zakázkový vývoj aplikací</p>
+            <h1>
+              Multiplatformní a nativní aplikace
+              <span>se společným backendem</span>
+            </h1>
+            <p class="lead">
+              Dodám webovou nebo mobilní aplikaci, která rychle vznikne, dobře
+              škáluje a reálně vydělává. Od MVP po dlouhodobý rozvoj.
+            </p>
+            <div class="hero-actions">
+              <a class="btn" href="#služby">Zobrazit služby</a>
+              <a class="btn btn-ghost" href="#kontakt">Napsat poptávku</a>
+            </div>
+            <ul class="hero-points">
+              <li>Multiplatformní aplikace (Flutter, React Native)</li>
+              <li>Nativní vývoj (iOS, Android)</li>
+              <li>Webové aplikace + API backend</li>
+            </ul>
+          </div>
+          <aside class="hero-panel reveal">
+            <p class="panel-title">Rychlý start projektu</p>
+            <ul class="panel-list">
+              <li>Audit nápadu a scope</li>
+              <li>Architektura API + datový model</li>
+              <li>Roadmapa sprintu a odhad rozpočtu</li>
+            </ul>
+            <div class="panel-metrics">
+              <div>
+                <strong>2-4 týdny</strong>
+                <span>první funkční release</span>
+              </div>
+              <div>
+                <strong>1 backend</strong>
+                <span>mobil i web pod jedním API</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="služby" class="container services">
+        <article class="card reveal">
+          <h2>Multiplatformní vývoj</h2>
+          <p>
+            Jedna kódová báze, více platforem. Ideální pro rychlé MVP i produkční
+            aplikace s vysokými nároky na rychlost dodání.
+          </p>
+          <p class="chip">Flutter / React Native / CI-CD</p>
+        </article>
+        <article class="card reveal">
+          <h2>Nativní aplikace</h2>
+          <p>
+            Tam, kde je potřeba maximální výkon, plynulost a hlubší integrace
+            se systémem, navrhnu nativní řešení pro iOS nebo Android.
+          </p>
+          <p class="chip">Swift / Kotlin / Native UX</p>
+        </article>
+        <article class="card reveal">
+          <h2>Web + společný backend</h2>
+          <p>
+            Navrhnu backend pro mobil i web současně. Čisté API, bezpečnost,
+            monitoring a příprava na další růst bez drahých přepisů.
+          </p>
+          <p class="chip">TypeScript / Node.js / PostgreSQL</p>
+        </article>
+      </section>
+
+      <section class="container timeline reveal">
+        <p class="eyebrow">Jak probíhá spolupráce</p>
+        <ol>
+          <li>
+            <h3>Discovery</h3>
+            <p>Upřesníme cíl, scope, priority a metriky úspěchu.</p>
+          </li>
+          <li>
+            <h3>Návrh architektury</h3>
+            <p>Výběr stacku, návrh datového modelu a roadmapa releasu.</p>
+          </li>
+          <li>
+            <h3>Vývoj a iterace</h3>
+            <p>Krátké sprinty, pravidelné demo a transparentní report.</p>
+          </li>
+          <li>
+            <h3>Nasazení a růst</h3>
+            <p>Publikace, monitoring, další feature roadmapa.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="container value reveal">
+        <div>
+          <p class="eyebrow">Co získáte</p>
+          <h2>Vývoj, který drží tempo s byznysem</h2>
+        </div>
+        <ul>
+          <li>Rychlý start bez složitého onboardingu</li>
+          <li>Jasný scope a předvídatelné náklady</li>
+          <li>Code quality, testovatelnost a dokumentace</li>
+          <li>Dlouhodobá podpora po spuštění</li>
+        </ul>
+      </section>
+
+      <section id="kontakt" class="container contact reveal">
+        <p class="eyebrow">Máš projekt?</p>
+        <h2>Pojďme probrat tvou poptávku</h2>
+        <p>
+          Napiš krátce, co stavíš. Do 24 hodin se ozvu s návrhem dalšího postupu.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:pavel.pejsek@gmail.com">pavel.pejsek@gmail.com</a>
+          <a class="btn btn-ghost" href="https://github.com/pejspa" target="_blank" rel="noreferrer"
+            >GitHub profil</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Pavel Pejsek. Zakázkový vývoj aplikací.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
